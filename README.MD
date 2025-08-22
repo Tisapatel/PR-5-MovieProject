@@ -101,13 +101,6 @@ Server will be live at 👉 `http://localhost:5000`
 
 ---
 
-## 📸 Screenshots (UI)
-
-
-
-
----
-
 ## 📦 Deployment
 
 - 🌐 Backend → [Heroku / Render / Railway]  
