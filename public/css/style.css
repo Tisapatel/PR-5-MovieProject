@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar-main {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo-img {
+  height: 60px;
+}
+
+.search-bar {
+  width: 500px;
+}
+
+.secondary-nav {
+  background-color: #f8f8f8;
+  font-size: 14px;
+}
+
+.secondary-nav a {
+  color: #333;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+.secondary-nav a:hover {
+  color: #e63946;
+}
+
+ .card {
+    border: none !important;   /* forcefully remove border */
+    box-shadow: none !important; /* remove shadow */
+  }
+.bi {
+  vertical-align: middle;
+}
+
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+#movieCarousel .card {
+  border: none;
+  box-shadow: none;
+}
+
+.border.rounded {
+  background-color: #fff;
+  border-color: #e0e0e0 !important;
+  transition: box-shadow 0.2s ease;
+}
+
+.border.rounded:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.btn-outline-danger {
+  border: 1px solid #f33;
+}
+
+.btn-outline-danger:hover {
+  background-color: #f33;
+  color: #fff;
+}
+
+.btn-danger.btn-sm {
+  background-color: #f33;
+  border: none;
+}
+
+.movie-card img {
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.movie-card:hover img {
+  transform: scale(1.05);
+}
+
+.movie-card .card-body {
+  padding: 0.75rem;
+}
+
+.movie-card h6 {
+  font-size: 0.95rem;
+}
+
+.movie-card small {
+  font-size: 0.8rem;
+}
+.card a {
+  text-decoration: none !important;
+  color: inherit; 
+}

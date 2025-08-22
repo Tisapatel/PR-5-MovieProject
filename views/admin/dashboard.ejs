@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | BookMyShow Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden; /* horizontal scroll hata diya */
+    }
+    .sidebar {
+      height: 100vh;
+      background: #1e293b;
+      color: white;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 230px;
+      padding: 20px 0;
+    }
+    .sidebar h4 {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .sidebar a {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 8px;
+      margin: 8px 15px;
+      transition: 0.3s;
+    }
+    .sidebar a:hover, .sidebar .active {
+      background: #334155;
+      color: #fff;
+    }
+    .main-content {
+      margin-left: 230px; /* sidebar width ke barabar */
+      padding: 20px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 25px;
+    }
+    .search-bar input {
+      border-radius: 20px;
+      border: none;
+      padding: 8px 15px;
+      width: 250px;
+    }
+    .stat-card {
+      border-radius: 15px;
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+    }
+    .stat-card.success {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+    .stat-card.warning {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+    }
+    .movie-card {
+      background: #1e293b;
+      border-radius: 15px;
+      overflow: hidden;
+      transition: transform 0.3s;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.5);
+      height: 100%;
+    }
+    .movie-card img {
+      width: 100%;
+      height: 280px; /* fixed height → sabhi img same size */
+      object-fit: cover;
+    }
+    .movie-card:hover {
+      transform: translateY(-5px);
+    }
+    .movie-card h5 {
+      color: #fff;
+      margin-top: 10px;
+    }
+    .movie-card p {
+      color: #94a3b8;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h4 class="text-center">🎬 Admin Panel</h4>
+    <a href="/admin" class="<%= activePage === 'dashboard' ? 'active' : '' %>">
+      <i class="bi bi-speedometer2"></i> Dashboard
+    </a>
+    <a href="/admin/add-movie" class="<%= activePage === 'add-movie' ? 'active' : '' %>">
+      <i class="bi bi-plus-square"></i> Add Movie
+    </a>
+    <a href="/admin/movies" class="<%= activePage === 'movies' ? 'active' : '' %>">
+      <i class="bi bi-film"></i> Manage Movies
+    </a>
+    <a href="/" >
+      <i class="bi bi-arrow-left-circle"></i> Back to Site
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="container-fluid">
+
+      <!-- Topbar -->
+      <div class="topbar">
+        <h2>Welcome,Tisa Patel</h2>
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-bar">
+            <input type="text" placeholder="Search...">
+          </div>
+          <i class="bi bi-bell fs-4"></i>
+          <i class="bi bi-person-circle fs-4"></i>
+        </div>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="row mb-4">
+        <div class="col-md-4">
+          <div class="stat-card">
+            <i class="bi bi-film fs-1"></i>
+            <h5>Total Movies</h5>
+            <h2><%= moviesCount %></h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card success">
+            <i class="bi bi-tv fs-1"></i>
+            <h5>Total Shows</h5>
+            <h2>201</h2>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="stat-card warning">
+            <i class="bi bi-ticket-perforated fs-1"></i>
+            <h5>Total Booking</h5>
+            <h2>401</h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Movies -->
+      <h4 class="mb-3">Recently Added Movies</h4>
+      <div class="row">
+        <% if (movies && movies.length > 0) { %>
+          <% movies.forEach(movie => { %>
+            <div class="col-md-3 mb-4">
+              <div class="movie-card">
+                <img src="<%= movie.posterImage %>" alt="<%= movie.title %>">
+                <div class="p-3">
+                  <h5><%= movie.title %></h5>
+                  <p><%= movie.genre %></p>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        <% } else { %>
+          <p>No movies found.</p>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
