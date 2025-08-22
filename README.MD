@@ -6,6 +6,7 @@ Admins can efficiently handle movies, shows, and user bookings through a secure 
 
 ---
 
+
 ## ✨ Features
 
 ### 👤 User Features
@@ -103,6 +104,8 @@ Server will be live at 👉 `http://localhost:5000`
 ## 📸 Screenshots (UI)
 
 
+
+
 ---
 
 ## 📦 Deployment
@@ -118,7 +121,7 @@ Server will be live at 👉 `http://localhost:5000`
 **Tisa Patel **   
 
 📧 Email: _tisapatel1204@gmail.com_   
-🐙 GitHub: [your-username](https://github.com/your-username)
+🐙 GitHub: [Tisa patel](https://github.com/Tisapatel)
 
 ---
 
